@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My | Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #290941;
+        }
+        h1, h2, h3, h4, h5, h6, p, a, span, div, button {
+            font-family: 'Quicksand', sans-serif;
+        }
+        .nav-link{
+            color: white;
+            
+            }
+      
+        .about {
+            background-color: #412657; 
+        }
+
+        .about .modal {
+            background-color: #412657 !important;
+            }
+
+            .contact {
+              background-color: #290941; 
+        }
+        .contact .modal {
+          background-color: #290941 !important;
+            }
+
+        .service {
+            background-color: #290941; 
+            }
+        
+            .ag-format-container {
+            width: 1142px;
+            margin: 0 auto;
+            }
+
+            .ag-courses_box {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: start;
+            -ms-flex-align: start;
+            align-items: flex-start;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+
+            padding: 50px 0;
+            }
+            .ag-courses_item {
+            -ms-flex-preferred-size: calc(33.33333% - 30px);
+            flex-basis: calc(33.33333% - 30px);
+            margin: 0 15px 30px;
+            overflow: hidden;
+            border-radius: 28px;
+            }
+            .ag-courses-item_link {
+            display: block;
+            padding: 30px 20px;
+            background-color:#412657;
+
+            overflow: hidden;
+
+            position: relative;
+            }
+            .ag-courses-item_link:hover,
+            .ag-courses-item_link:hover .ag-courses-item_date {
+            text-decoration: none;
+            color: #FFF;
+            }
+            .ag-courses-item_link:hover .ag-courses-item_bg {
+            -webkit-transform: scale(10);
+            -ms-transform: scale(10);
+            transform: scale(10);
+            }
+            .ag-courses-item_title {
+            min-height: 87px;
+            margin: 0 0 25px;
+
+            overflow: hidden;
+
+            font-weight: bold;
+            font-size: 30px;
+            color: #FFF;
+
+            z-index: 2;
+            position: relative;
+            }
+            .ag-courses-item_date-box {
+            font-size: 18px;
+            color: #FFF;
+
+            z-index: 2;
+            position: relative;
+            }
+            .ag-courses-item_date {
+            font-weight: bold;
+            color: #f9b234;
+
+            -webkit-transition: color .5s ease;
+            -o-transition: color .5s ease;
+            transition: color .5s ease
+            }
+            .ag-courses-item_bg {
+            height: 128px;
+            width: 128px;
+            background-color: #f9b234;
+
+            z-index: 1;
+            position: absolute;
+            top: -75px;
+            right: -75px;
+
+            border-radius: 50%;
+
+            -webkit-transition: all .5s ease;
+            -o-transition: all .5s ease;
+            transition: all .5s ease;
+            }
+            .ag-courses_item:nth-child(2n) .ag-courses-item_bg {
+            background-color: #3ecd5e;
+            }
+            .ag-courses_item:nth-child(3n) .ag-courses-item_bg {
+            background-color: #e44002;
+            }
+            .ag-courses_item:nth-child(4n) .ag-courses-item_bg {
+            background-color: #952aff;
+            }
+            .ag-courses_item:nth-child(5n) .ag-courses-item_bg {
+            background-color: #cd3e94;
+            }
+            .ag-courses_item:nth-child(6n) .ag-courses-item_bg {
+            background-color: #4c49ea;
+            }
+
+
+
+            @media only screen and (max-width: 979px) {
+            .ag-courses_item {
+                -ms-flex-preferred-size: calc(50% - 30px);
+                flex-basis: calc(50% - 30px);
+            }
+            .ag-courses-item_title {
+                font-size: 24px;
+            }
+            }
+
+            @media only screen and (max-width: 767px) {
+            .ag-format-container {
+                width: 96%;
+            }
+
+            }
+            @media only screen and (max-width: 639px) {
+            .ag-courses_item {
+                -ms-flex-preferred-size: 100%;
+                flex-basis: 100%;
+            }
+            .ag-courses-item_title {
+                min-height: 72px;
+                line-height: 1;
+
+                font-size: 24px;
+            }
+            .ag-courses-item_link {
+                padding: 22px 40px;
+            }
+            .ag-courses-item_date-box {
+                font-size: 16px;
+            }
+            }
+
+            img {
+	width: 100%;
+	max-width: 300px;
+}
+
+/* || BOOKING CARD */
+
+.booking__card {
+	width: 100%;
+	max-width: 300px;
+	background-color:#290941;
+	border-radius: 7px;
+	transition: all 0.2s ease;
+}
+.booking__card:hover {
+	transform: scale(1.015);
+}
+.booking__card--image {
+	height: 180px;
+	object-fit: cover;
+	border-radius: 7px 7px 0 0;
+}
+.booking__info {
+	padding: 1.25em;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 1.5em;
+}
+.booking__info--top {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.booking__title {
+	font-size: 1rem;
+	font-weight: 700;
+	color: hsl(0,0%,50%);
+}
+
+.booking__info--middle {
+    display: flex;
+	flex-direction: column;
+	gap: 0.9em;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+.booking__card--divider {
+	width: 100%;
+	height: 2px;
+	background: hsl(0, 0%, 90%);
+}
+.booking__price {
+	font-size: 1.15rem;
+	font-weight: 900;
+	color: hsl(0, 0%, 25%);
+}
+.booking__description {
+	font-size: 1rem;
+	color: hsl(0, 0%, 50%);
+}
+.booking__promotion {
+	font-size: 0.8rem;
+	color: hsl(0, 0%, 55%);
+}
+
+.booking__info--bottom {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 0.5em;
+}
+
+/* || BUTTONS */
+.btn {
+	border: 0;
+	padding: 0.5em 2em;
+	font-family: inherit;
+	font-weight: 600;
+	cursor: pointer;
+	border-radius: 3px;
+	transition: all 0.2s ease;
+}
+.btn--primary {
+	border: 1px solid hsl(0,0%,90%);
+	background: transparent;
+	color: hsl(0, 0%, 45%);
+}
+.btn--primary:hover {
+	background: hsl(0,0%,90%);
+}
+.btn--secondary {
+	background: rgb(85,80,166);
+	color: hsl(0, 0%, 95%);
+}
+.btn--secondary:hover {
+	background: rgba(85,80,166, 0.9);
+}
+.btn--alt {
+	color: hsl(0, 0%, 45%);
+}
+.btn--alt:hover {
+	color: hsl(0, 0%, 95%);
+	background: hsl(0, 50%, 55%);
+}
+
+.booking__cards {
+    display: flex;
+    justify-content: space-between;
+}
+
+.booking__card {
+    width: 23%; /* Adjust width as needed */
+    border: 1px solid #ccc; /* Optional: add border for better visualization */
+    box-sizing: border-box;
+    margin: 10px;
+}
+
+.booking__card--image {
+    width: 100%;
+    height: auto; 
+    display: block;
+}
+
+.booking__info {
+    padding: 10px;
+}
+
+.booking__info--top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.booking__title {
+    margin: 0;
+}
+
+.btn--primary {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Lora:400,700|Quicksand:400,700&display=swap');
+
+
+.contact {
+  display: flex;
+  flex-direction: column; 
+  position: relative;
+  background: linear-gradient(to bottom right, rgba(0,0,0, 0.9), rgba(36,11,54, 0.8), rgba(195,20,50,0.9)), url("https://i.imgur.com/3vacZxN.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.contact-header {
+  font-family: "Quicksand", sans-serif;
+  margin: 10rem 10rem 3rem 10rem;
+  text-align: center;
+}
+
+#co-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #c31432;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+#co-text {
+  font-size: 3rem;
+  color: white;
+  padding-bottom: 2rem;
+}
+
+.contact-content {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  line-height: 2;
+  height: auto;
+  width: 70%;
+  background-color: rgba(0,0,0,0.6);
+  margin-bottom: 10rem;
+}
+
+.contact-form {
+  font-family: "Quicksand", sans-serif;
+  padding: 5rem;
+}
+
+#form-title {
+  color: #fff;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  line-height: 1px;
+  margin-left: 4rem;
+  margin-bottom: 3rem;
+}
+
+fieldset {
+  border: none;
+}
+
+.form-field {
+  outline: none;
+  width: 200%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+    margin-bottom: .9rem;
+}
+
+#name, #email, #subject, #message {
+  font-family: "Quicksand", sans-serif;
+  color: #fff;
+  outline: none;
+  background: transparent;
+  border: none;
+  letter-spacing: 2px;
+  font-size: .6rem;
+  line-height: 2rem;
+  padding-bottom: 0.7rem;
+}
+
+textarea, #message {
+  width: 100%;
+  color: #fff;
+  overflow: visible;
+}
+
+#form-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  border: none;
+  color: white;
+  font-size: 0.6rem;
+  letter-spacing: 2.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  width: 200%;
+  height: 60px;
+  background-color: rgb(227, 173, 11);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+#form-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2.5%);
+  box-shadow: 0 0 15px 0 #000;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 5rem;
+  background-color: rgba(0,0,0,0.3);
+}
+
+.contact-info h3 {
+  font-family: "Quicksand", sans-serif;
+  font-size: 1rem;
+}
+
+.contact-info a {
+  font-family: "Quicksand", sans-serif;
+  text-decoration: none;
+  color: #666;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  line-height: 3rem;
+  margin-bottom: 5rem;
+  transition: all .3s ease;
+}
+
+.contact-info a:hover {
+  transform: translateY(-2.5%);
+  color: #999;
+}
+
+.contact-info .fab {
+  font-size: 1.5rem;
+  line-height: 3rem;
+  padding-left: 2rem;
+  color: #666;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.fab:hover{
+  transform: scale(1.2);
+  color: #999;
+}
+
+
+@media screen and (max-width: 960px) {
+  .contact-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-field {
+    width: 100%;
+  }
+  
+  #form-btn {
+    width: 100%;
+  }
+  
+  #form-title {
+    margin: 3rem auto;
+  }
+  
+  .contact-header{
+    margin: 5rem 5rem 3rem 5rem;
+  }
+  
+  #co-title {
+    font-size: 1rem;
+  }
+  
+  #co-text {
+    font-size: 2.5rem;
+  }
+  
+  .contact-form {
+    padding: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .form-field {
+    width: 125%;
+  }
+  
+  #form-title {
+    margin: 3rem auto;
+  }
+  
+  #form-btn {
+    width: 125%;
+  }
+  
+  .contact-header{
+    margin: 7rem 7rem 3rem 7rem;
+  }
+  
+  .contact-info {
+    padding: 5rem;
+  }
+  
+  #co-title {
+    font-size: 1rem;
+  }
+  
+  #co-text {
+    font-size: 2.5rem;
+  }
+  
+  .contact-form {
+    padding: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 1460px) {
+  .form-field {
+    width: 200%;
+  }
+  
+  #form-btn {
+    width: 200%;
+  }
+}
+
+/* Footer styles */
+.foot {
+  color: white; /* Set the font color to white for all text within the .foot section */
+}
+
+.foot a {
+  color: white; /* Set the link color to white */
+}
+
+.foot a:hover {
+  color: #ddd; /* Optional: change link color on hover for better visibility */
+}
+
+.text-body-secondary {
+  color: inherit; /* Inherit color from parent */
+}
+
+/* Import Quicksand font */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+
+/* Apply Quicksand font to the contact form */
+.contact-form, .contact-form input, .contact-form textarea, .contact-form h3, .contact-form button {
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* Optionally apply the font to the contact info */
+.contact-info, .contact-info h3, .contact-info p {
+    font-family: 'Quicksand', sans-serif;
+    font-size: larger;
+}
+
+
+
+    </style>
+</head>
+
+<body>
+<section class="nav-bar">
+    <div class="container">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4">
+          <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none" previewlistener="true">
+            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+            <span class="fs-4 fw-bold lh-1" style="color: white;">Mohit</span>&nbsp;<span class="fs-4 fw-bold lh-1" style="color: rgb(227, 173, 11);"> Sharma</span>
+          </a>
+    
+          <ul class="nav nav-pills">
+            <li class="nav-item"><a href="#" class="nav-link fw-bold lh-1" aria-current="page">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link fw-bold lh-1">About</a></li>
+            <li class="nav-item"><a href="#" class="nav-link fw-bold lh-1">Services</a></li>
+            <li class="nav-item"><a href="#" class="nav-link fw-bold lh-1">Properties</a></li>
+            <li class="nav-item"><a href="#" class="nav-link fw-bold lh-1">Contact Me</a></li>
+          </ul>
+        </header>
+      </div>
+</section>
+
+<section class="home">
+    <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+          <div class="col-10 col-sm-8 col-lg-6">
+            <img src="iphone memoji.png" class="d-block mx-lg-auto img-fluid" alt="Mohit Sharma" width="700" height="500" loading="lazy">
+          </div>
+          <div class="col-lg-6" style="color: white; font-size: xx-large;">
+            <h3 class="fw-bold lh-1 mb-0">Hello, My name is</h3>
+            <span class="fs-4 fw-bold lh-1" style="color: white;">Mohit</span><span class="fs-4 fw-bold lh-1" style="color: rgb(227, 173, 11);"> Sharma</span>
+            <p class="lead fw-bold lh-1">I work as a Team Manager at the Airbnb Firm</p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+              <button type="button" class="btn btn-warning btn-lg px-4 me-md-2" style="border-radius: 35px;">Download CV</button>
+              <button type="button" class="btn btn-light btn-lg px-4" style="border-radius: 35px;">Lets Talk</button>
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
+
+<section class="about">
+    <div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog" id="modalTour">
+              <div class="col-lg-8">
+
+                <h6 class="display-5 fw-bold lh-1 mb-3" style="color: white;margin-left: 250px;">About <span style="color:rgb(227, 173, 11) ;">Me</span></h6>
+                <p class="lead fw-normal" style="color: white;margin-left: 250px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown 
+                    printer took a galley of type and scrambled it to make a type specimen book. It has survived not 
+                    only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+                    It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+                    and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+              </div>
+          </div>
+      </div>
+</section>
+
+
+<section class="service" >
+    <div class="container py-3 mb-5">
+        <header>
+          <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <h6 class="display-5 fw-bold lh-1 mb-3" style="color: white;;">My <span style="color:rgb(227, 173, 11) ;">Services</span></h6>
+          </div>
+        </header>
+      <div class="ag-format-container">
+        <div class="ag-courses_box">
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                UI/Web&amp;Graph design for teenagers 11-17&#160;years old
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                Start:
+                <span class="ag-courses-item_date">
+                  04.11.2022
+                </span>
+              </div>
+            </a>
+          </div>
+      
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                UX/UI Web-Design&#160;+ Mobile Design
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                Start:
+                <span class="ag-courses-item_date">
+                  04.11.2022
+                </span>
+              </div>
+            </a>
+          </div>
+      
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Annual package "Product+UX/UI+Graph designer&#160;2022"
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                Start:
+                <span class="ag-courses-item_date">
+                  04.11.2022
+                </span>
+              </div>
+            </a>
+          </div>
+      
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Graphic Design
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                Start:
+                <span class="ag-courses-item_date">
+                  04.11.2022
+                </span>
+              </div>
+            </a>
+          </div>
+      
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Motion Design
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                Start:
+                <span class="ag-courses-item_date">
+                  30.11.2022
+                </span>
+              </div>
+            </a>
+          </div>
+      
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Front-end development&#160;+ jQuery&#160;+ CMS
+              </div>
+            </a>
+          </div>
+      
+        </div>
+      </div>
+      </div>
+</section>
+
+<section class="about">
+    <div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog" id="modalTour">
+        <header>
+            <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+              <h6 class="display-5 fw-bold lh-1 mb-3" style="color: white;;">My <span style="color:rgb(227, 173, 11) ;">Properties</span></h6>
+            </div>
+          </header>
+          <div class="booking__cards">
+            <div class="booking__card">
+                <img src="pexels-binyaminmellish-1396132.jpg" alt="flight" class="booking__card--image">
+                <div class="booking__info">
+                    <div class="booking__info--top">
+                        <h3 class="booking__title">Dubai Bunglow</h3>
+                        <button class="btn btn--primary">View Details</button>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="booking__card">
+                <img src="pexels-asadphoto-1449729.jpg" alt="flight" class="booking__card--image" style="height: 190px;">
+                <div class="booking__info">
+                    <div class="booking__info--top">
+                        <h3 class="booking__title">Maldives Bunglow</h3>
+                        <button class="btn btn--primary">View Details</button>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="booking__card">
+                <img src="pexels-binyaminmellish-106399.jpg" alt="flight" class="booking__card--image">
+                <div class="booking__info">
+                    <div class="booking__info--top">
+                        <h3 class="booking__title">London Bunglow</h3>
+                        <button class="btn btn--primary">View Details</button>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="booking__card">
+                <img src="pexels-expect-best-79873-323780.jpg" alt="flight" class="booking__card--image">
+                <div class="booking__info">
+                    <div class="booking__info--top">
+                        <h3 class="booking__title">Canada Bunglow</h3>
+                        <button class="btn btn--primary">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+	  </div>
+</section>
+
+
+<section class="contact">
+  <div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog" id="modalTour">
+    <header>
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+          <h6 class="display-5 fw-bold lh-1 mb-3" style="color: white;;">Contact <span style="color:rgb(227, 173, 11) ;">Me</span></h6>
+        </div>
+      </header>
+      <div class="contact-content" style="margin-left: 250px;background-color: #412657;">
+        <div class="contact-form">
+            <h3 id="form-title">Send me a message</h3>
+            <form action="mailto:npeel3497@gmail.com" method="post" enctype="text/plain">
+                <fieldset>
+                    <div class="form-field">
+                        <input name="name" type="text" id="name" placeholder="Your Name">
+                    </div>
+                    <div class="form-field">
+                        <input name="email" type="email" id="email" placeholder="Your Email">
+                    </div>
+                    <div class="form-field">
+                        <input name="Subject" type="text" id="subject" placeholder="Subject">
+                    </div>
+                    <div class="form-field">
+                        <textarea name="message" type="text" id="message" placeholder="Your Message"></textarea>
+                    </div>
+                </fieldset>
+                <input id="form-btn" type="submit" value="send">
+            </form>
+        </div>
+        
+        <div class="contact-info">
+            <h3 style="color:rgb(227, 173, 11);">Email:</h3>
+            <a href="mailto:npeel3497@gmail.com"><p>a_Sharma@gmail.com</p></a>
+            <h3 style="color:rgb(227, 173, 11);">Phone:</h3>
+            <a href="mailto:npeel3497@gmail.com"><p>7854123690</p></a>
+        </div>
+    </div>
+    
+</div>
+</section>
+
+<section class="foot">
+  <footer class="py-3 my-4 mb-0" style="background-color: #412657;">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="#" class="nav-link px-2">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2">Features</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2">Pricing</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2">FAQs</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2">About</a></li>
+    </ul>
+    <p class="text-center">© 2024 Mohit Sharma, Inc</p>
+  </footer>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
